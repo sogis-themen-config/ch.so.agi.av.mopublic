@@ -22,7 +22,7 @@ tasks.register('downloadFile', Download) {
     overwrite true
 }
 
-tasks.register('importData', Ili2pgImport) {
+tasks.register('importData', Ili2pgReplace) {
     dependsOn 'downloadFile'
     database = [dbUriPub, dbUserPub, dbPwdPub]
     dbschema = "agi_av_meldewesen_work_pub_v1"

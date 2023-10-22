@@ -16,7 +16,6 @@ dataSets.each { dataSet ->
     def dataSetFile = "ilidata:"+dataSet+".ch.so.agi.av.mopublic"
     println(dataSetFile)
 
-/*
     tasks.register("importData_$dataSet", Ili2pgReplace) {
         database = [dbUriPub, dbUserPub, dbPwdPub]
         dbschema = "agi_av_mopublic_pub_v1"
@@ -24,7 +23,6 @@ dataSets.each { dataSet ->
         dataset = dataSet
         disableValidation = true
     }
-    */
 }
 
 task importData() {

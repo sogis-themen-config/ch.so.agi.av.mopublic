@@ -7,8 +7,6 @@ apply plugin: "de.undercouch.download"
 
 defaultTasks 'importData'
 
-def pathToTempFolder = System.getProperty('java.io.tmpdir')
-
 def dataSets = ['2546', '2581', '2601']
 
 dataSets.each { dataSet ->
@@ -18,6 +16,7 @@ dataSets.each { dataSet ->
 
     tasks.register("importData_$dataSet", Ili2pgReplace) {
         database = [dbUriPub, dbUserPub, dbPwdPub]
+        models = "SO_AGI_MOpublic_20190424"
         dbschema = "agi_av_mopublic_pub_v1"
         dataFile = dataSetFile
         dataset = dataSet
